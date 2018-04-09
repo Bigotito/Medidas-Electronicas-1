@@ -1,0 +1,88 @@
+\chapter{Desarrollo}
+\section{Procedimiento}
+Para efectuar la medición, se necesita disponer de un generador de corriente constante.
+
+En el siguiente esquema se muestra como se puede implementar el mismo utilizando un regulador monolítico LM317,y la corriente de salida puede ajustarse a valores próximos a 100mA.
+Aunque en el esquema se indica emplear una tensión de alimentación de 12V, es posible utilizar otros valores, siendo el requerimiento mínimo: $V_{cc}=3V +V_s$ (donde $V_s$ es la tensión a bornes de la probeta, la cual dependerá del valor de resistencia de la misma).
+
+\begin{center}\begin{circuitikz}[scale = 0.8, transform shape]
+  \draw
+  (0,2) to[battery, v=$12V$] (0,0)
+  (3,2) node[draw, minimum width=1cm, minimum height = 1cm, text width = 1.5cm, anchor=center, align=center] (lm317) {LM317}
+  (0,2) to[short, l=Entrada] (lm317.west)
+  (lm317.east) to[short, l=Salida] ++(2,0)
+    to[R=$15\Omega$] (8,2) ++(-2,0) -- ++(0,1.5)
+    to[pR, l=$100\Omega$, n=pote] (8,3.5)
+  (lm317.south) to[short, l= Referencia] (3,0.75) -- (8,0.75)
+    to[short, -*] (8,2) to[short, -*] (8,3.5)
+  (pote.wiper) -- ++(1,0) -- (8,3.5)
+  (8,2) to[short, -o] (9,2)
+  (0,0) to[short, -o] (9,0)
+  (9,1.5) to[open, f=$I_\text{salida}$, xshift=-0.3cm] (9,1)
+  ;
+\end{circuitikz}\end{center}
+
+Como se espera medir un valor bajo de resistencia, se puede decir casi con certeza que el valor mínimo de la tensión de alimentación será alrededor de 4V.
+
+En el circuito, el resistor ajustable regula la corriente de salida. Se sugiere utilizar un valor de corriente de prueba de 10mA o 100mA.
+De esta manera la lectura de tension en mV es, salvo por la posicion de la coma, equivalente al valor de resistencia en $\Omega$.
+
+\begin{itemize}
+  \item La probeta consiste en un tramo de longitud conocida del cable a ensayar. Por razones prácticas, el mismo debe disponerse en forma de un rollo y para que este no se comporte como una bobina, conviene emplear un arrollamiento no inductivo, el cual se consigue plegando el cable por la mitad y luego arrollando el conjunto.
+  \item Inicialmente deberá disponerse el multímetro como mili-amperímetro para ajustar el generador de corriente. Si es posible habrá que usar un rango tal que permita medir cómodamente el valor de la corriente de salida (por ejemplo 200mA).
+  \item Seguidamente, se conectará el generador a la probeta. Con el multímetro dispuesto como mili-voltímetro en un rango apropiado (por ejemplo 200mV), y cuidando de conectar el mismo para obviar el contacto del generador, se debe medir la caída de tensión.
+  \item Consignar los valores obtenidos en la tabla correspondiente y calcular el valor de la resistencia de la probeta.
+\end{itemize}
+
+\section{Cálculo de la incertidumbre en la medición}
+La incertidumbre en la determinación de la resistencia por el método propuesto, se vincula con los errores que pueden estar presentes en cada una de las mediciones implicadas en el procedimiento.
+
+En este caso hay dos mediciones que deben efectuarse, una de corriente y una de tensión, y las dos se hacen con el multímetro, por ende el error relativo máximo total es la suma de los errores relativos máximos parciales, es decir:
+\begin{equation}\label{eq:1}\dfrac{\Delta R}{R} = \dfrac{\Delta V}{V} + \dfrac{\Delta I}{I}\end{equation}
+
+Los instrumentos (UNI-T UT61C para tension y ProsKit MT-5211 para corriente) utilizados para cada medición tienen las siguientes especificaciones:
+
+$$V[600mV] \rightarrow \framebox{$\Delta V = 0.5\%\text{ Medición} + 1\text{ digitos[0.1mV]}$}$$
+$$I[200mA] \rightarrow \framebox{$\Delta I = 1.2\%\text{ Medición} + 4\text{ digitos[0.1mA]}$}$$
+
+\begin{center}\tabulinesep=1.2mm\begin{tabu}{cc|c|c|c|}
+  \cline{3-5}
+                             &               & $\Delta X$    & $\dfrac{\Delta X}{X}$ & $\dfrac{\Delta X}{X} \cdot 100$ \\ \hline
+   \multicolumn{1}{|c|}{V}   & 104mV         & 0.62mV        & 0.006                 & 0.596 \\ \hline
+   \multicolumn{1}{|c|}{I}   & 100.5mA       & 1.31mA        & 0.012                 & 1.2 \\ \hline
+   \multicolumn{1}{|c|}{R}   & 1.035$\Omega$ & 0.019$\Omega$ & 0.018                 & 1.8 \\ \hline
+\end{tabu}\end{center}
+
+El valor de la resistencia se calculo mediante $R = \dfrac{V}{I}$, y el $\Delta R$ re acomodando la ecuación \ref{eq:1} para llegar a $\Delta R = R \cdot \left( \dfrac{\Delta V}{V} + \dfrac{\Delta I}{I} \right)$
+
+\section{Determinación del valor de resistencia por unidad de longitud $R_l$}
+Obviamente, el valor de resistencia por unidad de longitud del cable/alambre conductor ensayado, se obtendrá dividiendo la resistencia total medida por la longitud de la probeta.
+
+Este paso agregará una nueva fuente de error, pues habrá que tener en cuenta la incertidumbre presente en la medición de la longitud total de la probeta.
+
+Para el propósito que se busca en el presente trabajo práctico, no parece oportuno adentrarse en la problemática de la medición de longitud de la probeta, pues en el laboratorio de electrónica no se disponen de los elemento necesarios, por eso se tomará como dato válido de la longitud de la probeta ($L_p$), el valor que se encuentre en un rótulo o cartel adosado a la misma.
+
+Entonces, se pide determinar el valor de resistencia por unidad de longitud y agregar al cálculo del error máximo total la incertidumbre asociada a la longitud.
+
+\begin{center}\tabulinesep=1.2mm\begin{tabu}{|c|c|}
+  \hline
+  $R$ [$\Omega$] & 1.035 $\pm$ 0.019\\ \hline
+  $L_p$ [m] & 20 $\pm$ 0.02 \\ \hline
+  $R_l$ [$\sfrac{\Omega}{\text{m}}$] & 0.05 $\pm$ 0.001 \\ \hline
+  Incertidumbre total & 0.00108 \\ \hline
+\end{tabu}\end{center}
+
+Como las variables $R$ y $L_p$ no solo se han medido en lugares y momentos distintos, a su vez con distintos instrumentos de medición, asumimos que ambas mediciones son completamente independientes la una de la otra.
+Al considerar ambas mediciones como independientes, podemos usar una formula distinta para el calculo de incertidumbre total, que nos dará un valor menor, que el que nos daría si fuesen dependientes.
+
+A continuacion se desarrollan las formas de calcular $R_l$ y $\Delta R_l$
+
+$$R_l = \dfrac{R}{L_p} = \dfrac{1}{20} = 0.05$$
+
+\begin{center}$$\begin{aligned}
+  \Delta R_l &= \sqrt{ \left(\dfrac{\partial (\sfrac{R}{L_p})}{\partial L_p} \cdot \abs{\Delta R} \right) ^2 + \left( \dfrac{\partial(\sfrac{R}{L_p})}{R} \cdot \abs{\Delta L_p} \right)^2} \\
+  \Delta R_l &= \sqrt{ \left( \dfrac{1}{L_p} \cdot \abs{\Delta R} \right)^2 + \left( \dfrac{R}{L_p^2} \cdot \abs{\Delta L_p} \right)^2} \\
+  \Delta R_l &= \sqrt{ \left( \dfrac{1}{20} \cdot 0.019 \right)^2 + \left( \dfrac{1.035}{400} \cdot 0.20 \right)^2} \\
+  \Delta R_l &= 0.00108 \\
+  \Delta R_l &\approx 0.001
+\end{aligned}$$\end{center}

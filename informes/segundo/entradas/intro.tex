@@ -1,0 +1,43 @@
+\chapter{Introducción}
+\section{Objetivo}
+Determinar la resistencia por unidad de longitud de un cable/alambre conductor. Dar el resultado de la medición acompañado del grado de incertidumbre.
+
+\section{Materiales e Instrumental necesarios}
+\begin{itemize}
+  \item Multímetro digital con su correspondiente manual de especificaciones.
+  \item Circuito generador de corriente constante.
+  \item Probeta a ensayar (Tramo de cable o alambre de longitud conocida).
+\end{itemize}
+
+\section{Introducción}
+Para efectuar la medición de  resistencias de pequeño valor se requiere, por lo general, el empleo de métodos y/o instrumentos especiales.
+Estas mediciones no se pueden hacer mediante el óhmetro de un multímetro común porque la resistencia de contacto que hay entre  las puntas de prueba del instrumento  y los terminales del elemento que se mide se suma al resultado agregándose así un error que puede llegar a ser muy importante sobre todo si la magnitud de la resistencia que se espera medir es de unos pocos Ohm.
+Por otra parte es bastante difícil descontar  el error, dado que las resistencias de contacto son de valor impredecible y pueden variar dependiendo de las condiciones de la prueba.
+
+Se puede efectuar una medición más exacta de resistencias de pequeño valor, utilizando  algún instrumento que emplee  el método de 4 terminales.
+Este método se vale de una fuente que proporciona una corriente de prueba,  la cual se aplica al elemento cuya resistencia se desea medir por medio de  dos terminales, luego se determina la caída de tensión provocada mediante un voltímetro que se conecta con otros dos terminales separados de los primeros.
+Las resistencias de contacto no se eliminan, pero al separarse los "contactos  de corriente" y los  "contactos  de potencial",  el error puede ser  descartado.
+En este trabajo práctico se determinará la resistencia por unidad de longitud de un cable/alambre conductor mediante el empleo del método descrito.
+Para ello se usará  un generador de corriente constante, que el alumno deberá implementar, y un multimetro digital, que se utilizará como  miliamperimetro, para ajustar y calibrar la corriente de prueba, y luego como voltímetro para   medir la caída de tensión producida.
+
+Además deberá determinarse la incertidumbre presente en la medición efectuada, y para ello será necesario tener en cuenta las especificaciones de exactitud del instrumento empleado y aplicar la teoría de propagación de errores en mediciones indirectas  que el alumno aprenderá  en la parte teórica del curso.
+
+\begin{center}\begin{circuitikz}[scale = 1.0, transform shape]
+  \draw
+  (0,0) to[ioosource, l=Generador Corriente Constante] (0,2)
+  (0,2) to[/tikz/circuitikz/bipoles/length=0.5cm, R=r] (2,2)
+  (0,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R=r] (2,0)
+  (2,2) to[R=R] (2,0)
+  (2,2) to[/tikz/circuitikz/bipoles/length=0.5cm, R=r] (2,4)
+  (2,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R=r] (2,-2)
+  (2,4) -- (4,4)
+  (2,-2) -- (4,-2)
+  (4,-2) to[voltmeter,color=white, n=vt1, l_=Voltimetro] (4,4)
+  ;
+  \rotarTester{vt1}{0}
+\end{circuitikz}\end{center}
+
+En este trabajo práctico se determinará la resistencia por unidad de longitud de un cable/alambre conductor mediante el empleo del método descrito.
+Para ello se usará  un generador de corriente constante, que el alumno deberá implementar, y un multimetro digital, que se utilizará como  miliamperimetro, para ajustar y calibrar la corriente de prueba, y luego como voltímetro para   medir la caída de tensión producida.
+
+Además deberá determinarse la incertidumbre presente en la medición efectuada, y para ello será necesario tener en cuenta las especificaciones de exactitud del instrumento empleado y aplicar la teoría de propagación de errores en mediciones indirectas  que el alumno aprenderá  en la parte teórica del curso.

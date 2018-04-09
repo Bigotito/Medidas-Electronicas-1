@@ -1,0 +1,52 @@
+\chapter{Conclusiones}
+\section{Conclusiones}
+\begin{itemize}
+  \item En la descripción el procedimiento que se sigue para efectuar este trabajo practico se indica realizar una única serie de mediciones consistente en dos pasadas, una lectura del instrumento contrastado, una lectura del patron en cada pasada (una hacia arriba y otra hacia abajo)
+  \begin{itemize}
+    \item ¿Cual es el sentido de efectuar una pasada hacia arriba y otra hacia abajo?
+    \begin{itemize} 
+      \item Respuesta
+    \end{itemize}
+    \item Por otro lado, ¿No seria mejor haber realizado varias series de pasadas, digamos cuatro o cinco, y promediar o tomar la mediana para cada juego de valores? ¿Supondría esto alguna ventaja o mejora en el procedimiento?
+      \begin{itemize}
+        \item Respuesta
+      \end{itemize}
+  \end{itemize}
+  \item Averigüe en el Taller de mantenimiento del laboratorio, si el instrumental de medición que forma la dotación del mismo es sometido a contrataciones periódicas.
+  \begin{itemize} 
+    \item Respuesta 
+  \end{itemize}
+  \item Elabore una lista de al menos tres de los instrumentos que existen en el laboratorio, que podrían ser usados como referencia para la contrastación de otros. Incluya en la lista la especificación de exactitud de cada instrumento.
+  \begin{itemize}
+    \item Respuesta
+  \end{itemize}
+  \item En el instrumento que usted ha contrastado
+  \begin{itemize}
+    \item ¿Por cuanto tiempo estima que sera valida la curva obtenida?
+      \begin{itemize}
+        \item Respuesta
+      \end{itemize}
+    \item ¿Cuales serian, a su juicio, las causas que obligarían a efectuar un nuevo procedimiento de contrastación?
+      \begin{itemize}
+        \item Respuesta
+      \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Aclaraciones}
+El instrumento a contrastar (UNIVO Ganz 8032) tiene una Clase de 2.5, y un fondo de escala (en el rango que lo utilizamos) de $10V$, por lo que su error maximo es de:
+$$2.5\% \cdot 10V = \framebox{0.25V}$$
+El instrumento patron que utilizamos (UNI-T UT61C) tiene una presicion de 0.5\% + 1 digito para la escala de tension que se usa en las mediciones (600mV,6V,60V), y una presicion de 0.01V por lo que su errori maximo al medir 10V sera de:
+$$0.5\% \cdot 10V + 0.01V = 0.05V + 0.01V = \framebox{0.06V}$$
+Segun la regla general, para que un instrumento sea patron de otro, la exactitud del instrumento patron, debe ser 5 veces mayor a la del instrumento a contrastar, lo cual no es el caso aqui, pero al ser solamente una regla
+general, y no un valor exacto a seguir, consideramos que el valor es lo suficientemente proximo a 5 como para considerarse patron.
+$$\dfrac{\Delta V_{contrastado}}{\Delta V_{patron}} = \dfrac{0.25}{0.06} = \framebox{$4.167 \lessapprox 5$}$$
+Cabe aclarar que si bien en el mayor valor, 10V, no parece aproximarse mucho, esta relacion si aumenta bastante al medir menores tensiones
+
+Para $9V$
+$$0.5\% \cdot 9V + 0.01V = 0.045V + 0.01V = \framebox{0.055V}$$
+$$\dfrac{\Delta V_{contrastado}}{\Delta V_{patron}} = \dfrac{0.25}{0.055} = \framebox{$4.545 \lessapprox 5$}$$
+
+Para $8V$
+$$0.5\% \cdot 8V + 0.01V = 0.04V + 0.01V = \framebox{0.05V}$$
+$$\dfrac{\Delta V_{contrastado}}{\Delta V_{patron}} = \dfrac{0.25}{0.05} = \framebox{$5 = 5$}$$

@@ -1,0 +1,98 @@
+\chapter{Desarrollo}
+\section{Procedimiento}
+\begin{itemize}
+  \item Montar el siguiente circuito (La resistencia es opcional por si la fuente de alimentación disponible no llegase a $0V$)
+    
+    \begin{center}\begin{circuitikz}[scale = 1.0, transform shape]
+      \draw
+      (0,2) to[V = $V_{cc}$] (0,0)
+      (0,2) -- (2,2)
+      (0,0) -- (2,0)
+      (2,2) to[pR = $R_{(Opcional)}$, n=pote] (2,0)
+      (pote.wiper) -- ++(0,1)
+      (2,2) -- (5,2)
+      (2,0) -- (5,0)
+      (5,2) to[voltmeter, color=white, l = Patron, n=at1] (5,0)
+      (5,2) -- (8,2)
+      (5,0) -- (8,0)
+      (8,2) to[voltmeter, color=white, l = Contrastado, n=vt1] (8,0)
+      ;
+      \rotarTester{at1}{0}
+      \rotarTester{vt1}{0}
+    \end{circuitikz}\end{center}
+  \item Ajustar la tension de la fuente para lograr que la aguja indicadora del instrumento a contrastar se situé sobre cada una de las marcas correspondientes a las divisiones de su escala y simultáneamente tomar nota del valor indicado por el instrumento empleado como patron.
+  \item Efectuar una pasada hacia arriba (Es decir, desde cero hasta el valor máximo) y una pasada hacia abajo (desde el valor máximo hacia el cero)
+  \item Calcular los dos valores de error absoluto del instrumento (uno de la pasada hacia arriba y otro hacia abajo) en cada punto contrastado. Si no son iguales, consignar el mayor.
+  \item Completar la siguiente tabla con los valores anteriores.
+    \begin{description}
+      \item $V_L$: Valores indicados del instrumento a contrastar.
+      \item $V_p$: Valor medido con el instrumento patron
+      \item $\Delta V$: Error absoluto del instrumento contrastado
+    \end{description}
+
+\end{itemize}
+\begin{center}\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|c|} \hline
+  $V_L$                       & 1     & 2     & 3     & 4     & 5     & 6    & 7    & 8    & 9    & 10 \\ \hline
+  $V_p$ (pasada hacia arriba) & 0.986 & 1.968 & 2.972 & 3.986 & 5.023 & 6.05 & 7.08 & 8.09 & 9.11 & 10.10 \\ \hline
+  $V_p$ (pasada hacia abajo)  & 1.023 & 1.964 & 3.000 & 4.003 & 5.047 & 6.05 & 7.06 & 8.09 & 9.12 & 10.10\\ \hline
+  $\Delta V$(el mayor valor)  & 0.023 & 0.036 & 0.028 & 0.014 & 0.047 & 0.05 & 0.08 & 0.09 & 0.12 & 0.10\\ \hline
+\end{tabu}\end{center}
+
+\begin{itemize}
+  \item En base a los datos tabulados confeccionar la gráfica de corrección.
+\end{itemize}
+
+\begin{center}\tabulinesep=1.2mm\begin{tabu}{c c|c|c|c|}
+  \cline{2-5}
+  \multicolumn{1}{c|}{}            & Instrumento Contrastado                & Patron                                  & Fecha                       & Operador/es \\ \cline{2-5}
+  \multicolumn{1}{c|}{}            & Marca: Ganz                            & Marca: UNI-T                            & \multirow{2}{*}{04/04/2018} & Della Santina Lucas \\
+  \multicolumn{1}{c|}{Sumar ($V$)} & N\textsuperscript{\underline{o}}: 8032 & N\textsuperscript{\underline{o}}: UT61C &                             & Gratton Antonino\\ \cline{2-5}
+  \multicolumn{5}{r}{
+\begin{tikzpicture}\begin{axis}[
+    xmin = 0, xmax= 11,
+    ymin = -0.15, ymax = 0.15,
+    xtick={0,1,2,3,4,5,6,7,8,9,10},
+    legend pos=north west,
+    grid=major,
+    grid style=dashed,
+    x post scale = 2
+]
+\addplot[
+    ycomb,
+    color=black,
+    mark=*,
+    ]
+    coordinates {
+      (1, -0.023)
+      (2,  0.036)
+      (3,  0.028)
+      (4,  0.014)
+      (5, -0.047)
+      (6, -0.05)
+      (7, -0.08)
+      (8, -0.09)
+      (9, -0.12)
+      (10,-0.10)
+    };
+\end{axis}\end{tikzpicture}
+  }\\
+  Restar($V$)
+\end{tabu}\end{center}
+
+\begin{itemize}
+  \item De los datos recogidos, identifique cual es el ''Error absoluto máximo'' y con ese valor calcule el indice de clase usando la siguiente expresión \footnote{Redondeando hacia arriba el resultado}:
+\end{itemize}
+
+$\text{Clase} = \dfrac{\text{Error absoluto maximo}}{\text{Valor de fondo de escala}} \cdot 100 \rightarrow \text{Clase} = \dfrac{\left|-0.12\right|}{10} \rightarrow \text{Clase} = 1.2$
+
+$$\framebox{\text{Clase del Instrumento} = 1.5}$$
+
+\begin{itemize}
+  \item Compruebe si la ''Clase'' obtenida guarda coherencia con la indicada en la hoja de especificaciones del voltímetro contrastado.
+\end{itemize}
+
+La Clase del instrumento según sus especificaciones es de 2.5, y según el máximo error que obtuvimos, su clase es de 1.5.
+
+Esto es coherente, ya que la especificación de clase del instrumento tiene en cuenta el mayor error posible, y resulta que en nuestras mediciones tuvimos un error menor al mayor posible.
+
+En otras palabras, los errores en nuestras mediciones cayeron dentro del rango que la clase 2.5 toma en cuenta.

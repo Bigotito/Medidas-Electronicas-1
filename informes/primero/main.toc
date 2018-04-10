@@ -7,4 +7,4 @@
 \contentsline {section}{\numberline {2.1}Procedimiento}{3}{section.2.1}
 \contentsline {chapter}{\numberline {3}Conclusiones}{5}{chapter.3}
 \contentsline {section}{\numberline {3.1}Conclusiones}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Aclaraciones}{5}{section.3.2}
+\contentsline {section}{\numberline {3.2}Aclaraciones}{6}{section.3.2}

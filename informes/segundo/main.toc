@@ -8,4 +8,5 @@
 \contentsline {section}{\numberline {2.2}C\IeC {\'a}lculo de la incertidumbre en la medici\IeC {\'o}n}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Determinaci\IeC {\'o}n del valor de resistencia por unidad de longitud $R_l$}{5}{section.2.3}
 \contentsline {chapter}{\numberline {3}Conclusion}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Conclusiones}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}Enunciado}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Conclusiones}{7}{section.3.2}

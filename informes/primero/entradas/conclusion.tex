@@ -5,44 +5,46 @@
   \begin{itemize}
     \item ¿Cual es el sentido de efectuar una pasada hacia arriba y otra hacia abajo?
     \begin{itemize} 
-      \item La idea detras de esto es que los elementos fisicos del multimetro no son ideales, y que el mecanismo que mueve la aguja tiene cierto coficiente de rozamiento, y una tendencia mayor hacia la izquierda del dispositivo, como se encuentra en reposo, por lo que hacer varias pasadas nos permite ver ambos casos, cuando tiene esa tendencia hacia la izquierda a favor, y en contra
+      \item La idea detrás de esto es que los elementos físicos del multímetro no son ideales, y que el mecanismo que mueve la aguja tiene cierto coeficiente de rozamiento, y una tendencia mayor hacia la izquierda del dispositivo, como se encuentra en reposo, por lo que hacer varias pasadas nos permite ver ambos casos, cuando tiene esa tendencia hacia la izquierda a favor, y en contra
     \end{itemize}
     \item Por otro lado, ¿No seria mejor haber realizado varias series de pasadas, digamos cuatro o cinco, y promediar o tomar la mediana para cada juego de valores? ¿Supondría esto alguna ventaja o mejora en el procedimiento?
       \begin{itemize}
-        \item Esto seria una mejora en el procedimiento, ya que se mitigaria el posible error de medicion que causa el operador, cuando debe leer una medida analogica en una escala.
-          Ademas al tomar la media de  los valores, en caso de haber alguna medicion extraordinaria (al estilo de, o le instrumento o el operador causaron que haya una medida muy imprecisa), este valor no afecta tanto al resultado final si el resto de las mediciones son normales.
+        \item Esto seria una mejora en el procedimiento, ya que se mitigaría el posible error de medición que causa el operador, cuando debe leer una medida analógica en una escala.
+          Ademas al tomar la media de  los valores, en caso de haber alguna medición extraordinaria (al estilo de, o le instrumento o el operador causaron que haya una medida muy imprecisa), este valor no afecta tanto al resultado final si el resto de las mediciones son normales.
       \end{itemize}
   \end{itemize}
   \item Averigüe en el Taller de mantenimiento del laboratorio, si el instrumental de medición que forma la dotación del mismo es sometido a contrataciones periódicas.
   \begin{itemize} 
-    \item \textbf{AVERIGUAR EN EL LAB!!!!!!}
+    \item No se realizan tareas de contrastación de manera periódica, la única tarea periódica que se realiza sobre los instrumentos es el cambio de pilas; sin contar las contrastaciones que se hacen anualmente por los alumnos para este informe.
   \end{itemize}
   \item Elabore una lista de al menos tres de los instrumentos que existen en el laboratorio, que podrían ser usados como referencia para la contrastación de otros. Incluya en la lista la especificación de exactitud de cada instrumento.
   \begin{itemize}
-    \item \textbf{AVERIGUAR EN EL LAB!!!!!!}
+    \item Escort EDM 82B (0.5\% + 1d.)[400mV,4V,40V]
+    \item Brymen BM837RS (0.08\% + 1d.)[400mV,4V,40V]
+    \item ProTek 506 (0.3\% + 2d.)[400mV] - (0.5\% + 1d.)[4V,40V]
   \end{itemize}
   \item En el instrumento que usted ha contrastado:
   \begin{itemize}
     \item ¿Por cuanto tiempo estima que sera valida la curva obtenida?
       \begin{itemize}
-        \item \textbf{CREO QUE 1 AÑO PERO AVERIGUARLO DE FORMA SEMI-EMPIRICA}
+        \item Dependerá del uso que se le de al instrumento, la frecuencia con la que se realicen mediciones y con la que se lo traslade. Suponemos que con el uso que se le da en el laboratorio, la contrastación sera valida hasta el año próximo cuando se realice la siguiente contrastación
       \end{itemize}
     \item ¿Cuales serian, a su juicio, las causas que obligarían a efectuar un nuevo procedimiento de contrastación?
       \begin{itemize}
-        \item \textbf{SOBRECARGA DEL LIMITE DEL MULTIMETRO QUE CAUSE ESTRES EN EL COMPONENTE MECANICO?}
+        \item El mismo uso del instrumento, que al tener partes mecánicas son susceptibles a los efectos de fricción, o vibraciones en el traslado, y ambas cosas pueden causar variaciones en el funcionamiento del instrumento, por lo que luego de varias mediciones y traslados habría que medir para ver si la curva de contestación sigue siendo valida.
       \end{itemize}
   \end{itemize}
 \end{itemize}
 
 \section{Aclaraciones}
-El instrumento a contrastar (UNIVO Ganz 8032) tiene una Clase de 2.5, y un fondo de escala (en el rango que lo utilizamos) de $10V$, por lo que su error maximo es de:
+El instrumento a contrastar (UNIVO Ganz 8032) tiene una Clase de 2.5, y un fondo de escala (en el rango que lo utilizamos) de $10V$, por lo que su error máximo es de:
 $$2.5\% \cdot 10V = \framebox{0.25V}$$
-El instrumento patron que utilizamos (UNI-T UT61C) tiene una presicion de 0.5\% + 1 digito para la escala de tension que se usa en las mediciones (600mV,6V,60V), y una presicion de 0.01V por lo que su errori maximo al medir 10V sera de:
+El instrumento patron que utilizamos (UNI-T UT61C) tiene una precision de 0.5\% + 1 dígito para la escala de tension que se usa en las mediciones (600mV,6V,60V), y una precision de 0.01V por lo que su error máximo al medir 10V sera de:
 $$0.5\% \cdot 10V + 0.01V = 0.05V + 0.01V = \framebox{0.06V}$$
-Segun la regla general, para que un instrumento sea patron de otro, la exactitud del instrumento patron, debe ser 5 veces mayor a la del instrumento a contrastar, lo cual no es el caso aqui, pero al ser solamente una regla
-general, y no un valor exacto a seguir, consideramos que el valor es lo suficientemente proximo a 5 como para considerarse patron.
+Según la regla general, para que un instrumento sea patron de otro, la exactitud del instrumento patron, debe ser 5 veces mayor a la del instrumento a contrastar, lo cual no es el caso aquí, pero al ser solamente una regla
+general, y no un valor exacto a seguir, consideramos que el valor es lo suficientemente próximo a 5 como para considerarse patron.
 $$\dfrac{\Delta V_{contrastado}}{\Delta V_{patron}} = \dfrac{0.25}{0.06} = \framebox{$4.167 \lessapprox 5$}$$
-Cabe aclarar que si bien en el mayor valor, 10V, no parece aproximarse mucho, esta relacion si aumenta bastante al medir menores tensiones
+Cabe aclarar que si bien en el mayor valor, 10V, no parece aproximarse mucho, esta relación si aumenta bastante al medir menores tensiones
 
 Para $9V$
 $$0.5\% \cdot 9V + 0.01V = 0.045V + 0.01V = \framebox{0.055V}$$

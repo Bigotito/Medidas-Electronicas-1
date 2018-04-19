@@ -1,23 +1,29 @@
 \chapter{Conclusion}
-\section{Conclusiones}
+\section{Enunciado}
 Elabore conclusiones teniendo en cuenta lo siguiente:
 \begin{itemize}
-  \item ¿Que ventajas presenta el método de medición con 4 terminales  por sobre los métodos convencionales?
-    \begin{itemize}
-      \item La medición de 4 terminales es que permite medir valores pequeños de resistencia, sin importar la resistencia de los terminales del multímetro.
-
-        También, dependiendo del multímetro, puede significar un error mucho mas pequeño al medir tension y corriente, que si solo midiésemos resistencia, en nuestro caso, usando el UNI-T UT61C y el ProsKit MT5211, logramos una precision de 1.8\% en la resistencia, y si hubiésemos usado cualquiera de esos dos multímetros, la incertidumbre hubiese sido de (1\%+2dígitos[0.1$\Omega$]) y (0.8\%+5dígitos[0.1$\Omega$]), respectivamente, lo cual para valores altos de resistencias es mejor, pero a valores bajos, la suma de los dígitos significa mucho error porcentual.
-    \end{itemize}
-  \item Realice una búsqueda en Internet  sobre el tema “caja de resistencias de precisión”. Busque información sobre instrumentos de laboratorio que se emplean para la medición de resistencia. Examine las hojas de especificaciones de los  manuales  de cada uno de ellos e interprete las que corresponden a incertidumbre en la medición.
-    \begin{itemize}
-      \item Respuesta
-    \end{itemize}
-  \item La fuente de corriente propuesta para  este práctico, es muy simple pero bastante efectiva. Busque la hoja de datos del Circuito integrado LM317 e investigue como funciona.
-    \begin{itemize}
-      \item Acotación?
-    \end{itemize}
-  \item La ecuación que se emplea para el cálculo de la incertidumbre supone que los errores  parciales se suman. Algunos autores  sugieren que en algunas situaciones, una mejor estimación  de la incertidumbre se obtiene  efectuando la raíz cuadrada de la suma de los cuadrados de los errores parciales. Discuta con sus compañeros cual es la mejor opción en el caso de la experiencia que acaba de realizar.  
-    \begin{itemize}
-      \item En nuestro caso analizamos esto mientras desarrollábamos el practico, y optamos por utilizar dicha ecuación de la media cuadrática; ya que consideramos ambas mediciones totalmente independientes, al haber sido medidas con instrumentos totalmente distintos, en momentos y lugares distintos.
-    \end{itemize}
+  \item ¿Que ventajas presenta el método de medición con 4 terminales por sobre los métodos convencionales?
+  \item Realice una búsqueda en Internet sobre el tema “caja de resistencias de precisión”.
+  \item Busque información sobre instrumentos de laboratorio que se emplean para la medición de resistencia. Examine las hojas de especificaciones de los manuales y de cada uno de ellos e interprete las que corresponden a incertidumbre en la medición.
+  \item La fuente de corriente propuesta para este práctico, es muy simple pero bastante efectiva. Busque la hoja de datos del Circuito integrado LM317 e investigue como funciona.
+  \item La ecuación que se emplea para el cálculo de la incertidumbre supone que los errores parciales se suman. Algunos autores sugieren que en algunas situaciones, una mejor estimación de la incertidumbre se obtiene efectuando la raíz cuadrada de la suma de los cuadrados de los errores parciales. Discuta con sus compañeros cual es la mejor opción en el caso de la experiencia que acaba de realizar. 
 \end{itemize}
+
+\section{Conclusiones}
+La medición de cuatro terminales utilizada para la realización de los ensayos de laboratorio permite medir valores pequeños de resistencia, sin ser afectado por la resistencia de los terminales del multímetro ni por los potenciales de contacto producidos debido a la conexión de diferentes metales.
+Estos parámetros se encuentran modelados en el circuito de medición de cuatro terminales.
+
+Un análisis de las hojas de datos de varios instrumentos ha arrojado que el porcentaje de error para corriente y tensión en los multímetros son menores que para este en modo ohmetro, a valores de resistencia pequeños, para la aplicación del método de cuatro terminales.
+Para escalas de resistencia superiores, el error relativo en la medición es menor con el multímetro en modo ohmetro que el producido por dos multímetros midiendo corriente y tensión.
+
+En relación a los instrumentos de medición, dependiendo de la calidad, estos ofrecen diversas exactitudes.
+Por ejemplo, un instrumento de alta gama o confeccionado exclusivamente para mediciones de los parámetros resistencia, inductancia y capacitancia, otorgará una menor incertidumbre que un multímetro dedicado a realizar mediciones de muchos parámetros diferentes o uno de gama inferior.
+
+Para la calibración de estos instrumentos de medición existen diversos equipos, uno de ellos son las cajas de resistencias de precisión cuyo funcionamiento se basa en la conmutación de distintos valores resistivos con un alto grado de exactitud del orden de los miliohmios.
+
+En el cálculo de incertidumbre total realizado, se ha optado por la utilización de la ecuación que corresponde a la raíz cuadrada de la suma de los cuadrados de los errores parciales, debido a que las mediciones se llevaron a cabo con instrumentos distintos para cada parámetro, ademas de ser realizadas en momentos y lugares diferentes, lo que garantiza que estas medidas son completamente independientes e implica un menor error que en el caso de que estas fueran dependientes entre sí.
+
+En lo que respecta a la fuente de corriente constante utilizada en el ensayo, esta posee el regulador LM317.
+Este componente funciona manteniendo constante la diferencia de potencial entre la salida y su terminal de referencia, la cual es de aproximadamente 1,2V, siendo esta la caída de tensión en los resistores ubicados en la salida del circuito.
+Modificando el resistor variable, el parámetro ajustable es la corriente de salida.
+Al aumentar la carga sobre el circuito, este responde incrementando la tensión de salida para así mantener constante la corriente preestablecida.
